@@ -4,6 +4,8 @@ using System.Diagnostics;
 using System.Text;
 using System.IO;
 using System.Threading;
+using Launcher_Cli.Utils;
+using System.Runtime.InteropServices;
 
 namespace Launcher_Cli
 {
@@ -13,16 +15,47 @@ namespace Launcher_Cli
      * 
      * 28.09.2023
      */
+
     public class Launcher
     {
         private static string v = Utils.Utils.Version;
+        #region unmanaged
+        [DllImport("Kernel32")]
+        public static extern bool SetConsoleCtrlHandler(HandlerRoutine Handler, bool Add);
+
+        public delegate bool HandlerRoutine(CtrlTypes CtrlType);
+
+        public enum CtrlTypes
+        {
+            CTRL_C_EVENT = 0,
+            CTRL_BREAK_EVENT,
+            CTRL_CLOSE_EVENT,
+            CTRL_LOGOFF_EVENT = 5,
+            CTRL_SHUTDOWN_EVENT
+        }
+        #endregion
+        private static bool isclosing = false;
+        private static bool ConsoleCtrlCheck(CtrlTypes ctrlType)
+        {
+            switch (ctrlType)
+            {
+                case CtrlTypes.CTRL_CLOSE_EVENT:
+                    isclosing = true;
+                    Api.UserDisconnected();
+                    break;
+            }
+            return true;
+        }
         static void Main(string[] args)
         {
             Thread newThread = new Thread(new ThreadStart(Utils.Utils.AnimatedTitle)); // działa? działa. jest dobrze? działa
             newThread.Start();
-             
+            Utils.Utils.ReadConfig();
+            Api.UserConnected();
+            SetConsoleCtrlHandler(new HandlerRoutine(ConsoleCtrlCheck), true);
             
             
+
             // nwm fajnie wyglada xd
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine(@"

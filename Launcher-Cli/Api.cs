@@ -18,9 +18,9 @@ namespace Launcher_Cli
         // narazie jeszcze nie mamy samej czesci backendu zrobionej wiec narazie nie dziala to wszystko (zabiore sie za to kiedy bede mial checi i czas)
         public static string GetCurrentActiveUsers()
         {
-            // todo
-            //return Utils.Utils.client.DownloadString("https://sj2r.zndev.xyz/api/v1/GetUsersConnected.php");
-            return "1";
+            
+            return Utils.Utils.client.DownloadString("https://sj2r.zndev.xyz/api/v1/GetUsersConnected.php");
+            //return "1";
         }
         public static void UserConnected()
         {

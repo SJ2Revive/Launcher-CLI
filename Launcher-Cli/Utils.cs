@@ -14,7 +14,7 @@ namespace Launcher_Cli.Utils
     public static class Utils
     {
         public static WebClient client = new WebClient();
-        public static string Version = "1.1";
+        public static string Version = "1.2";
         
 
 
