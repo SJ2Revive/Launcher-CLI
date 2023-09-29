@@ -15,6 +15,7 @@ namespace Launcher_Cli.Utils
     {
         public static WebClient client = new WebClient();
         public static string Version = "1.0.3";
+        public static Clientwebsocket
 
 
         // jak sama nazwa funckji mówi, jest to odpowiedzialne za animowany tytuł konsoli

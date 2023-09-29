@@ -18,7 +18,7 @@ namespace Launcher_Cli
         public static string GetCurrentActiveUsers()
         {
             // todo
-            return string.Empty;
+            return "0";
         }
         public static Object[] GetMods() 
         {
