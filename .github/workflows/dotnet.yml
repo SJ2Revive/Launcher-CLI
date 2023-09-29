@@ -28,6 +28,4 @@ jobs:
       uses: actions/upload-artifact@v3.1.3
       with:
           name: Launcher
-          path: 
-            D:\a\Launcher-CLI\Launcher-CLI\Launcher-Cli\bin\Release\Launcher-Cli.exe
-            D:\a\Launcher-CLI\Launcher-CLI\Launcher-Cli\bin\Release\Newtonsoft.Json.dll
+          path: ./bin/Release/*
