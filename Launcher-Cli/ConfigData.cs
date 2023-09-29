@@ -4,7 +4,8 @@ using System.Text;
 
 namespace Launcher_Cli
 {
-    internal class Class1
+    public static class ConfigData
     {
+        public static string User {get; set;} // tutaj jest miejsce do przetrzymywania twojego identyfikatora
     }
 }

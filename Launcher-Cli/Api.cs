@@ -15,10 +15,21 @@ namespace Launcher_Cli
      */
     public class Api
     {
+        // narazie jeszcze nie mamy samej czesci backendu zrobionej wiec narazie nie dziala to wszystko (zabiore sie za to kiedy bede mial checi i czas)
         public static string GetCurrentActiveUsers()
         {
             // todo
-            return "0";
+            return Utils.Utils.client.DownloadString("https://sj2r.zndev.xyz/api/v1/GetUsersConnected.php");
+        }
+        public static void UserConnected()
+        {
+            // mozliwe ze kiedys upublicznie ta czesc backendu aby kod zrodlowy caly byl a nie sam launcher
+            Utils.Utils.client.DownloadString("https://sj2r.zndev.xyz/api/v1/UserConnected.php?username="+ConfigData.User);
+        }
+        public static void UserDisconnected()
+        {
+            // mozliwe ze kiedys upublicznie ta czesc backendu aby kod zrodlowy caly byl a nie sam launcher
+            Utils.Utils.client.DownloadString("https://sj2r.zndev.xyz/api/v1/UserDisconnected.php?username=" + ConfigData.User);
         }
         public static Object[] GetMods() 
         {

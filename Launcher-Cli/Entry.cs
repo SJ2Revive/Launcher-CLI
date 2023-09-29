@@ -39,8 +39,9 @@ namespace Launcher_Cli
 |____________________________|");
             // ale juz wracamy do normalnego koloru
             Console.ForegroundColor= ConsoleColor.White;
-            Console.WriteLine($"Aktualnie jest aktywne {Api.GetCurrentActiveUsers()} użytkoników");
-            Console.WriteLine("\n1) Uruchom Grę"); 
+            Console.WriteLine($"\nAktualnie jest aktywne {Api.GetCurrentActiveUsers()} użytkoników");
+            Console.WriteLine($"Twój Identyfikator {ConfigData.User}");
+            Console.WriteLine("1) Uruchom Grę"); 
             Console.WriteLine("2) Przeglądaj Mody");
             Console.WriteLine("3) Otwórz strone sj2r");
             Console.WriteLine("4) Wyjdź");
