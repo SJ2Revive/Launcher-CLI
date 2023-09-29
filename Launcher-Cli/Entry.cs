@@ -32,14 +32,20 @@ namespace Launcher_Cli
 |         SJ2Revive          |
 |         Launcher           |
 |           Lite             |
-|           "+v+@"            |
+|           "+v+@"              |
 |                            |
 |                            |
 |                            |
 |____________________________|");
             // ale juz wracamy do normalnego koloru
             Console.ForegroundColor= ConsoleColor.White;
-            Console.WriteLine($"\nAktualnie jest aktywne {Api.GetCurrentActiveUsers()} użytkoników");
+            if(int.Parse(Api.GetCurrentActiveUsers()) >= 1)
+            {
+                Console.WriteLine($"\nAktualnie jest aktywne {Api.GetCurrentActiveUsers()} użytkoników");
+            } else
+            {
+                Console.WriteLine($"\nAktualnie jest aktywny {Api.GetCurrentActiveUsers()} użytkonik");
+            }
             Console.WriteLine($"Twój Identyfikator {ConfigData.User}");
             Console.WriteLine("1) Uruchom Grę"); 
             Console.WriteLine("2) Przeglądaj Mody");
