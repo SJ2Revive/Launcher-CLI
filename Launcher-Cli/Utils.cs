@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Net;
 using System.Text;
+using System.Threading;
 
 namespace Launcher_Cli.Utils
 {
@@ -13,6 +14,21 @@ namespace Launcher_Cli.Utils
     public static class Utils
     {
         public static WebClient client = new WebClient();
-        public static string Version = "1.0.2";
+        public static string Version = "1.0.3";
+
+
+        // jak sama nazwa funckji mówi, jest to odpowiedzialne za animowany tytuł konsoli
+        public static void AnimatedTitle()
+        {
+            string title = " SJ2REVIVE NAJLEPSZE MODY DO SJ2 -> https://sj2r.zndev.xyz";
+            while (true)
+            {
+                for (int i = 0; i < title.Length; i++)
+                {
+                    Console.Title = title.Substring(i) + title.Substring(0, i);
+                    Thread.Sleep(200);
+                }
+            }
+        }
     }
 }

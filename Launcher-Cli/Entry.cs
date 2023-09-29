@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
 using System.IO;
+using System.Threading;
+
 namespace Launcher_Cli
 {
     /*
@@ -16,6 +18,11 @@ namespace Launcher_Cli
         private static string v = Utils.Utils.Version;
         static void Main(string[] args)
         {
+            Thread newThread = new Thread(new ThreadStart(Utils.Utils.AnimatedTitle)); // działa? działa. jest dobrze? działa
+            newThread.Start();
+             
+            
+            
             // nwm fajnie wyglada xd
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine(@"
