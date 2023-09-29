@@ -26,15 +26,11 @@ jobs:
       run: msbuild.exe Launcher-Cli.sln /property:Configuration=Release
     - name: test ls
       run: dir .\Launcher-CLI\bin\Release\
-    - name: Push Artifact (Launcher)
+    - name: Push Artifact
       uses: actions/upload-artifact@v3.1.3
       with:
           name: Launcher
-          path: .\Launcher-CLI\bin\Release\Launcher-Cli.exe
-    - name: Push Artifact (Newtonsoft.Json)
-      uses: actions/upload-artifact@v3.1.3
-      with:
-          name: Launcher
-          path: .\Launcher-CLI\bin\Release\Newtonsoft.Json.dll
+          path: .\Launcher-CLI\bin\Release\*
+    
               
               
