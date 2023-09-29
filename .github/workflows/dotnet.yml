@@ -16,7 +16,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: setup-msbuild
+    - name: setup msbuild
       uses: microsoft/setup-msbuild@v1.3.1
-    - name: build-solution
+    - name: build solution
       run: msbuild.exe Launcher-Cli.sln
