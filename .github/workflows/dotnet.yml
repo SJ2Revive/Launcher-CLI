@@ -29,5 +29,5 @@ jobs:
       with:
           name: Launcher
           path: 
-            /Release/Launcher-Cli.exe
-            /Release/Newtonsoft.Json.dll
+            D:\a\Launcher-CLI\Launcher-CLI\Launcher-Cli\Release\Launcher-Cli.exe
+            D:\a\Launcher-CLI\Launcher-CLI\Launcher-Cli\Release\Newtonsoft.Json.dll
