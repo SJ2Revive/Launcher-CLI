@@ -25,14 +25,14 @@ namespace Launcher_Cli
 |         SJ2Revive          |
 |         Launcher           |
 |           Lite             |
-|          "+v+@"             |
+|           "+v+@"            |
 |                            |
 |                            |
 |                            |
 |____________________________|");
             // ale juz wracamy do normalnego koloru
             Console.ForegroundColor= ConsoleColor.White;
-            Console.WriteLine("1) Uruchom Grę");
+            Console.WriteLine("\n1) Uruchom Grę"); 
             Console.WriteLine("2) Przeglądaj Mody");
             Console.WriteLine("3) Otwórz strone sj2r");
             Console.WriteLine("4) Wyjdź");
