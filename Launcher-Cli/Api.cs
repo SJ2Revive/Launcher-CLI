@@ -19,18 +19,18 @@ namespace Launcher_Cli
         public static string GetCurrentActiveUsers()
         {
             
-            return Utils.Utils.client.DownloadString("https://sj2r.zndev.xyz/api/v1/GetUsersConnected.php");
-            //return "1";
+            //return Utils.Utils.client.DownloadString("https://sj2r.zndev.xyz/api/v1/GetUsersConnected.php");
+            return "0";
         }
         public static void UserConnected()
         {
             // mozliwe ze kiedys upublicznie ta czesc backendu aby kod zrodlowy caly byl a nie sam launcher
-            Utils.Utils.client.DownloadString("https://sj2r.zndev.xyz/api/v1/UserConnected.php?username="+ConfigData.User);
+            //Utils.Utils.client.DownloadString("https://sj2r.zndev.xyz/api/v1/UserConnected.php?username="+ConfigData.User);
         }
         public static void UserDisconnected()
         {
             // mozliwe ze kiedys upublicznie ta czesc backendu aby kod zrodlowy caly byl a nie sam launcher
-            Utils.Utils.client.DownloadString("https://sj2r.zndev.xyz/api/v1/UserDisconnected.php?username=" + ConfigData.User);
+            //Utils.Utils.client.DownloadString("https://sj2r.zndev.xyz/api/v1/UserDisconnected.php?username=" + ConfigData.User);
         }
         public static Object[] GetMods() 
         {
